@@ -30,6 +30,7 @@ typedef struct rkAENC_CHN_ATTR_S {
     RK_U32            u32BufCount;     /* encode buffer count */
 
     AENC_ATTR_CODEC_S stCodecAttr;
+    RK_U32            u32Depth;
 } AENC_CHN_ATTR_S;
 
 typedef struct rkAENC_ENCODER_S {

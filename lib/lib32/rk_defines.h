@@ -64,9 +64,9 @@ extern "C" {
 #define VO_WBC_MAX_OUT_HEIGHT          1080
 
 /* For AUDIO */
-#define AI_DEV_MAX_NUM                 8
+#define AI_DEV_MAX_NUM                 16
 #define AI_MAX_CHN_NUM                 1
-#define AO_DEV_MAX_NUM                 8
+#define AO_DEV_MAX_NUM                 16
 #define AO_MAX_CHN_NUM                 3
 #define AENC_MAX_CHN_NUM               32
 #define ADEC_MAX_CHN_NUM               32

@@ -78,6 +78,7 @@ typedef struct rkMB_POOL_CONFIG_S {
     MB_DMA_TYPE_E enDmaType;
     RK_BOOL bPreAlloc;
     RK_BOOL bNotDelete;
+    RK_U64 u64Uuid;
 } MB_POOL_CONFIG_S;
 
 typedef struct rkMB_CONFIG_S {

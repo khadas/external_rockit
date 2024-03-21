@@ -61,6 +61,7 @@ typedef struct rkADEC_CH_ATTR_S {
     RK_U32          u32BufSize;     /* decode buffer size(buffer size to store pcm data) */
 
     ADEC_ATTR_CODEC_S stCodecAttr;
+    RK_U32          u32Depth;
 } ADEC_CHN_ATTR_S;
 
 typedef struct rkADEC_CH_STATE_S {

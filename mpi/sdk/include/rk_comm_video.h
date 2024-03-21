@@ -122,7 +122,8 @@ typedef struct rkASPECT_RATIO_S {
 #define RK_VIDEO_FMT_MASK                   0x000f0000
 #define RK_VIDEO_FMT_YUV                    0x00000000
 #define RK_VIDEO_FMT_RGB                    0x00010000
-#define RK_VIDEO_FMT_BAYER                  0X00020000
+#define RK_VIDEO_FMT_BPP                    0x00020000
+#define RK_VIDEO_FMT_BAYER                  0X00030000
 
 typedef enum rkPIXEL_FORMAT_E {
     RK_FMT_YUV420SP         = RK_VIDEO_FMT_YUV,        /* YYYY... UV...            */
@@ -173,7 +174,8 @@ typedef enum rkPIXEL_FORMAT_E {
     RK_FMT_XBGR8888,                                   /* 32-bit RGB               */
     RK_FMT_RGB_BUTT,
 
-    RK_FMT_2BPP,
+    RK_FMT_2BPP            = RK_VIDEO_FMT_BPP,
+    RK_FMT_8BPP,
 
     RK_FMT_RGB_BAYER_SBGGR_8BPP = RK_VIDEO_FMT_BAYER,  /* 8-bit raw                */
     RK_FMT_RGB_BAYER_SGBRG_8BPP,                       /* 8-bit raw                */

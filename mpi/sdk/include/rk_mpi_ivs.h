@@ -30,6 +30,10 @@ RK_S32 RK_MPI_IVS_SetMdAttr(IVS_CHN IvsChn, IVS_MD_ATTR_S *pstMdAttr);
 
 RK_S32 RK_MPI_IVS_GetMdAttr(IVS_CHN IvsChn, IVS_MD_ATTR_S *pstMdAttr);
 
+RK_S32 RK_MPI_IVS_SetOdAttr(IVS_CHN IvsChn, IVS_OD_ATTR_S *pstOdAttr);
+
+RK_S32 RK_MPI_IVS_GetOdAttr(IVS_CHN IvsChn, IVS_OD_ATTR_S *pstOdAttr);
+
 RK_S32 RK_MPI_IVS_SendFrame(IVS_CHN VdChn, const VIDEO_FRAME_INFO_S *pstFrame, RK_S32 s32MilliSec);
 
 RK_S32 RK_MPI_IVS_GetResults(IVS_CHN VdChn, IVS_RESULT_INFO_S *pstResults, RK_S32 s32MilliSec);

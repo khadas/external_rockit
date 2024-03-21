@@ -13,7 +13,7 @@ extern "C" {
 #endif /* __cplusplus */
 
 /** AIISP update AINR params callback function */
-typedef void* (*AIISP_CALLBACK)(RK_VOID *pPrivateData);
+typedef RK_S32 (*AIISP_CALLBACK)(RK_VOID *pAinrParam, RK_VOID *pPrivateData);
 
 typedef struct AIISP_CALLBACK_FUNC_S {
     AIISP_CALLBACK              pfUpdateCallback;
@@ -23,6 +23,8 @@ typedef struct AIISP_CALLBACK_FUNC_S {
 typedef struct rkAIISP_ATTR_S {
     RK_BOOL               bEnable;              /* Whether AIISP is enable */
     AIISP_CALLBACK_FUNC_S stAiIspCallback;      /* AIISP callback function */
+    const RK_CHAR        *pModelFilePath;       /* AIISP model file path   */
+    RK_U32                u32FrameBufCnt;       /* RW; frame buffer cnt    */
 } AIISP_ATTR_S;
 
 #ifdef __cplusplus
