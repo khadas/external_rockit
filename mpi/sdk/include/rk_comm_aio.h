@@ -170,6 +170,7 @@ typedef struct rkAIO_ATTR_S {
     RK_U8               u8MapOutChns[AI_MAX_CHN_NUM];
     RK_U8               u8MapChns[AI_MAX_CHN_NUM][MAX_SOUND_CARD_CHANNEL];
     RK_BOOL             bBypassFlag;
+    RK_S32              s32DevQueLen;
 } AIO_ATTR_S;
 
 typedef struct rkAI_CHN_PARAM_S {
@@ -178,6 +179,7 @@ typedef struct rkAI_CHN_PARAM_S {
     AUDIO_LOOPBACK_MODE_E enLoopbackMode;
     RK_U32 u32MapPtNumPerFrm;
     AUDIO_SAMPLE_RATE_E enSamplerate;
+    RK_S32 s32SedQueLen;
 } AI_CHN_PARAM_S;
 
 typedef struct rkAO_CHN_PARAM_S {

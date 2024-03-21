@@ -215,6 +215,8 @@ typedef struct rkVI_PIPE_ATTR_S {
     FRAME_RATE_CTRL_S     stFrameRate;
     /* RW; Pipe Mem mode */
     VI_RAW_MEMORY_TYPE_E  enMemMode;
+    /* RW;Pipe Hdr Mode */
+    VI_HDR_MODE_E         enHdrMode;
 } VI_PIPE_ATTR_S;
 
 /* The attributes of channel for isp opt */
@@ -358,6 +360,19 @@ typedef struct rkVI_EVENT_CALL_BACK_S {
     RK_VI_EventCallback pfnCallback;
     RK_VOID            *pPrivateData;
 } VI_EVENT_CALL_BACK_S;
+
+typedef enum _rkVILightType{
+    LIGHT_TYPE_PWM,
+    LIGHT_TYPE_GPIO,
+} VI_LIGHT_TYPE_E;
+
+typedef struct rkVILightParam{
+    RK_U8  light_type;
+    RK_U8  light_enable;
+    RK_U64 duty_cycle;
+    RK_U64 period;
+    RK_U32 polarity;
+} VI_LIGHT_CTL_PARAM_S;
 
 #define RK_ERR_VI_INVALID_PARA        RK_DEF_ERR(RK_ID_VI, RK_ERR_LEVEL_ERROR, RK_ERR_ILLEGAL_PARAM)
 #define RK_ERR_VI_INVALID_DEVID       RK_DEF_ERR(RK_ID_VI, RK_ERR_LEVEL_ERROR, RK_ERR_INVALID_DEVID)

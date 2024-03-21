@@ -26,6 +26,8 @@ RK_S32 RK_MPI_AVS_GetGrpAttr(AVS_GRP AVSGrp, AVS_GRP_ATTR_S *pstGrpAttr);
 RK_S32 RK_MPI_AVS_SetGrpAttr(AVS_GRP AVSGrp, const AVS_GRP_ATTR_S *pstGrpAttr);
 RK_S32 RK_MPI_AVS_GetGrpRoi(AVS_GRP AVSGrp, AVS_ROI_PARAM_S *pstRoiParam);
 RK_S32 RK_MPI_AVS_SetGrpRoi(AVS_GRP AVSGrp, const AVS_ROI_PARAM_S *pstRoiParam);
+RK_S32 RK_MPI_AVS_SetGrpRotation(AVS_GRP AVSGrp, ROTATION_E enRotation);
+RK_S32 RK_MPI_AVS_GetGrpRotation(AVS_GRP AVSGrp, ROTATION_E *penRotation);
 
 /* Pipe Settings */
 RK_S32 RK_MPI_AVS_SetPipeAttr(AVS_GRP AVSGrp, AVS_PIPE AVSPipe, const AVS_PIPE_ATTR_S *pstPipeAttr);
@@ -36,8 +38,6 @@ RK_S32 RK_MPI_AVS_GetPipeFrame(AVS_GRP AVSGrp, AVS_PIPE AVSPipe,
                                VIDEO_FRAME_INFO_S *pstVideoFrame);
 RK_S32 RK_MPI_AVS_ReleasePipeFrame(AVS_GRP AVSGrp, AVS_PIPE AVSPipe,
                                    const VIDEO_FRAME_INFO_S *pstVideoFrame);
-RK_S32 RK_MPI_AVS_SetPipeAttr(AVS_GRP AVSGrp, AVS_PIPE AVSPipe, const AVS_PIPE_ATTR_S *pstPipeAttr);
-RK_S32 RK_MPI_AVS_GetPipeAttr(AVS_GRP AVSGrp, AVS_PIPE AVSPipe, AVS_PIPE_ATTR_S *pstPipeAttr);
 
 /* Channel Settings */
 RK_S32 RK_MPI_AVS_SetChnAttr(AVS_GRP AVSGrp, AVS_CHN AVSChn, const AVS_CHN_ATTR_S *pstChnAttr);

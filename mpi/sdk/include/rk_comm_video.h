@@ -200,6 +200,8 @@ typedef enum rkPIXEL_FORMAT_E {
 typedef enum rkVIDEO_PROC_DEV_TYPE_E {
     VIDEO_PROC_DEV_GPU = 0x0,       /* GPU device */
     VIDEO_PROC_DEV_RGA = 0x1,       /* RGA device */
+    VIDEO_PROC_DEV_ISP = 0x2,       /* ISP device */
+    VIDEO_PROC_DEV_VPSS = 0x3,      /* VPSS device */
 
     VIDEO_PROC_DEV_BUTT
 } VIDEO_PROC_DEV_TYPE_E;
