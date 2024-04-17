@@ -78,6 +78,14 @@ RK_S32 RK_MPI_AI_EnableGbs(AUDIO_DEV AiDevId, AI_CHN AiChn);
 RK_S32 RK_MPI_AI_DisableGbs(AUDIO_DEV AiDevId, AI_CHN AiChn);
 RK_S32 RK_MPI_AI_GetGbsResult(AUDIO_DEV AiDevId, AI_CHN AiChn, AI_GBS_RESULT_S *pstGbsResult);
 
+RK_S32 RK_MPI_AI_SetSedAgcAttr(AUDIO_DEV AiDevId, AI_CHN AiChn, const AUDIO_AGC_CONFIG_S *pstSedCommConfig);
+RK_S32 RK_MPI_AI_GetSedAgcAttr(AUDIO_DEV AiDevId, AI_CHN AiChn, AUDIO_AGC_CONFIG_S *pstSedCommConfig);
+RK_S32 RK_MPI_AI_EnableSedAgc(AUDIO_DEV AiDevId, AI_CHN AiChn);
+RK_S32 RK_MPI_AI_DisableSedAgc(AUDIO_DEV AiDevId, AI_CHN AiChn);
+
+RK_S32 RK_MPI_AI_EnableSedFir(AUDIO_DEV AiDevId, AI_CHN AiChn);
+RK_S32 RK_MPI_AI_DisableSedFir(AUDIO_DEV AiDevId, AI_CHN AiChn);
+
 #ifdef __cplusplus
 #if __cplusplus
 }

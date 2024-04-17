@@ -28,6 +28,8 @@ RK_S32 RK_MPI_AVS_GetGrpRoi(AVS_GRP AVSGrp, AVS_ROI_PARAM_S *pstRoiParam);
 RK_S32 RK_MPI_AVS_SetGrpRoi(AVS_GRP AVSGrp, const AVS_ROI_PARAM_S *pstRoiParam);
 
 /* Pipe Settings */
+RK_S32 RK_MPI_AVS_SetPipeAttr(AVS_GRP AVSGrp, AVS_PIPE AVSPipe, const AVS_PIPE_ATTR_S *pstPipeAttr);
+RK_S32 RK_MPI_AVS_GetPipeAttr(AVS_GRP AVSGrp, AVS_PIPE AVSPipe, AVS_PIPE_ATTR_S *pstPipeAttr);
 RK_S32 RK_MPI_AVS_SendPipeFrame(AVS_GRP AVSGrp, AVS_PIPE AVSPipe,
                                 const VIDEO_FRAME_INFO_S *pstVideoFrame, RK_S32 s32MilliSec);
 RK_S32 RK_MPI_AVS_GetPipeFrame(AVS_GRP AVSGrp, AVS_PIPE AVSPipe,

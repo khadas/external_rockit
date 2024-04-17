@@ -76,6 +76,7 @@ typedef enum rkAVS_MODE_E {
     * */
     AVS_MODE_NOBLEND_QR   = 3,
     AVS_MODE_NOBLEND_OVL  = 4,
+    AVS_MODE_BLEND_DYN    = 5,
 
     AVS_MODE_BUTT
 } AVS_MODE_E;

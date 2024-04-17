@@ -36,7 +36,7 @@ typedef struct rkADEC_ATTR_CODEC_S {
     RK_CODEC_ID_E  enType;
     RK_U32         u32Channels;
     RK_U32         u32SampleRate;
-	RK_U32         u32BitPerCodedSample;  /* codewords */
+    RK_U32         u32BitPerCodedSample;  /* codewords */
     RK_U32         u32Bitrate;
 
     RK_VOID       *pExtraData;

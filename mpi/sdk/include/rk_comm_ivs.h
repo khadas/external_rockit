@@ -62,12 +62,18 @@ typedef struct rkIVS_CHN_ATTR_S {
     union {
         IVS_DET_ATTR_S stDetAttr;
     };
+    RK_U32 u32MaxWidth;
+    RK_U32 u32MaxHeight;
 } IVS_CHN_ATTR_S;
 
 typedef struct rkIVS_MD_ATTR_S {
     RK_S32 s32ThreshSad; // [0, 4095]
     RK_S32 s32ThreshMove; // [0, 4]
     RK_S32 s32SwitchSad; // [0, 3]
+    RK_BOOL bFlycatkinFlt;
+    RK_S32 s32ThresDustMove;
+    RK_S32 s32ThresDustBlk;
+    RK_S32 s32ThresDustChng;
 } IVS_MD_ATTR_S;
 
 typedef struct rkIVS_MD_INFO_S {
@@ -78,6 +84,8 @@ typedef struct rkIVS_MD_INFO_S {
     RK_U32 u32Size;
     RK_S32 s32Fd;
     RK_U32 u32Square;
+    RK_U32 u32DetAreaSquare;
+    RK_U32 u32DetOutputSquare;
 } IVS_MD_INFO_S;
 
 typedef struct rkIVS_OD_INFO_S {

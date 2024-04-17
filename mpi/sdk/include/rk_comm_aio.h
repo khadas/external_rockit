@@ -16,6 +16,7 @@ extern "C" {
 #define MAX_AUDIO_FILE_PATH_LEN 256
 #define MAX_AUDIO_FILE_NAME_LEN 256
 #define MAX_ARRAY_NUM 16
+#define MAX_SOUND_CARD_CHANNEL 32
 
 /*
  * G726 bitrate and bitdepth map:
@@ -166,12 +167,17 @@ typedef struct rkAIO_ATTR_S {
      * the index of device to open sound card
      */
     RK_U8               u8CardName[64];
+    RK_U8               u8MapOutChns[AI_MAX_CHN_NUM];
+    RK_U8               u8MapChns[AI_MAX_CHN_NUM][MAX_SOUND_CARD_CHANNEL];
+    RK_BOOL             bBypassFlag;
 } AIO_ATTR_S;
 
 typedef struct rkAI_CHN_PARAM_S {
     RK_S32 s32UsrFrmDepth;
     RK_S32 s32UsrFrmCount;
-	AUDIO_LOOPBACK_MODE_E enLoopbackMode;
+    AUDIO_LOOPBACK_MODE_E enLoopbackMode;
+    RK_U32 u32MapPtNumPerFrm;
+    AUDIO_SAMPLE_RATE_E enSamplerate;
 } AI_CHN_PARAM_S;
 
 typedef struct rkAO_CHN_PARAM_S {
@@ -422,6 +428,14 @@ typedef struct _AUDIO_DOA_CONFIG_S {
     short lgPitchNum;
 } AUDIO_DOA_CONFIG_S;
 
+typedef struct _AUDIO_WKP_CONFIG_S {
+    int   s32Mode;           // 0: oneshot, 1: wakeup + command
+    int   s32WakeupFrames;   // (default: 180) the frame counts of keeping wakeup and waiting command word
+    int   s32WakeupWords;    // the max of wakeup word, which is >= 1
+    char  modelWord1[128];    // wakeup word
+    char  modelWord2[128];    // command word
+} AUDIO_WKP_CONFIG_S;
+
 typedef struct rkAUDIO_BEAM_FORM_CONFIG_S {
     RK_S32      s32ModelEn;
     RK_S32      s32RefPos;
@@ -438,6 +452,7 @@ typedef struct rkAUDIO_BEAM_FORM_CONFIG_S {
     AUDIO_DTD_CONFIG_S  dtd;
     AUDIO_HOWL_CONFIG_S howl;
     AUDIO_DOA_CONFIG_S  doa;
+    AUDIO_WKP_CONFIG_S  wkp;
 } AUDIO_BEAM_FORM_CONFIG_S;
 
 typedef struct rkAI_VQE_USER_CONFIG_S {
@@ -467,10 +482,17 @@ typedef struct rkAI_VQE_RESULT_S {
     RK_FLOAT              s32WakeupCmdScore;
 } AI_VQE_RESULT_S;
 
+typedef struct rkAI_SED_CONFIG_S {
+    RK_S64                s64RecChannelType;  /* Rec channel layout type */
+    RK_S32                s32FrameLen;        /* If not specified, it will be set 90 by rk_ai_channel. */
+    RK_BOOL               bUsed;
+} AI_SED_CONFIG_S;
+
 typedef struct rkAI_AED_CONFIG_S {
     RK_FLOAT              fSnrDB;
     RK_FLOAT              fLsdDB;
     RK_S32                s32Policy;
+    RK_FLOAT              fSmoothParam;
 } AI_AED_CONFIG_S;
 
 typedef struct rkAI_AED_RESULT_S {
@@ -488,6 +510,11 @@ typedef struct rkAI_BCD_CONFIG_S {
     RK_FLOAT              mJudgeEnergy;
     RK_FLOAT              mCryThres1;
     RK_FLOAT              mCryThres2;
+    RK_FLOAT              mConfirmProb;
+    AI_SED_CONFIG_S       stSedCfg;
+    union {
+        RK_CHAR           aModelPath[MAX_AUDIO_FILE_PATH_LEN];
+    };
 } AI_BCD_CONFIG_S;
 
 typedef struct rkAI_BCD_RESULT_S {
@@ -501,6 +528,8 @@ typedef struct rkAI_BUZ_CONFIG_S {
     RK_FLOAT              mEnergyMax;
     RK_FLOAT              mBuzThres1;
     RK_FLOAT              mBuzThres2;
+    RK_FLOAT              mConfirmProb;
+    AI_SED_CONFIG_S       stSedCfg;
 } AI_BUZ_CONFIG_S;
 
 typedef struct rkAI_BUZ_RESULT_S {
@@ -509,6 +538,8 @@ typedef struct rkAI_BUZ_RESULT_S {
 
 typedef struct rkAI_GBS_CONFIG_S {
     RK_S32                mFrameLen;       // Statistics frame length, the longer it is, the harder it is to wake up
+    RK_FLOAT              mConfirmProb;
+    AI_SED_CONFIG_S       stSedCfg;
 } AI_GBS_CONFIG_S;
 
 typedef struct rkAI_GBS_RESULT_S {
@@ -527,6 +558,8 @@ typedef struct rkAO_VQE_USER_CONFIG_S {
 
     AUDIO_AGC_CONFIG_S    stAgcCfg;
     AUDIO_ANR_CONFIG_S    stAnrCfg;
+    AUDIO_HOWL_CONFIG_S   stHowlCfg;
+    RK_S32                s32ModelEn;
 } AO_VQE_USER_CONFIG_S;
 
 typedef struct rkAO_VQE_CONFIG_S {

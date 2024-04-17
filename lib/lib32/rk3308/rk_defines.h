@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Rockchip Electronics Co. LTD
+ * Copyright 2021 Rockchip Electronics Co. LTD
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,16 +57,16 @@ extern "C" {
 #define VO_MAX_LAYER_NUM               2 /* max layer num */
 #define VO_MAX_CHN_NUM                 128 /* max chn num */
 #define VO_MAX_WBC_NUM                 0
+#define VO_WBC_MAX_OUT_WIDTH           0
+#define VO_WBC_MAX_OUT_HEIGHT          0
 #define VO_MAX_BUF_NUM                 15
 #define VO_MAX_PRIORITY                7 /* max layer priority */
 #define VO_MAX_PHY_DEV_NUM             1 /* max physical dev num */
-#define VO_WBC_MAX_OUT_WIDTH           1920
-#define VO_WBC_MAX_OUT_HEIGHT          1080
 
 /* For AUDIO */
-#define AI_DEV_MAX_NUM                 16
+#define AI_DEV_MAX_NUM                 2
 #define AI_MAX_CHN_NUM                 1
-#define AO_DEV_MAX_NUM                 16
+#define AO_DEV_MAX_NUM                 2
 #define AO_MAX_CHN_NUM                 3
 #define AENC_MAX_CHN_NUM               32
 #define ADEC_MAX_CHN_NUM               32
@@ -88,6 +88,7 @@ extern "C" {
 /* For TDE */
 #define TDE_MAX_JOB_NUM                128
 #define TDE_MAX_TASK_NUM               200
+#define TDE_DEVICE_TYPE                1
 
 /* For GDC */
 #define GDC_MAX_JOB_NUM                0
@@ -116,3 +117,4 @@ extern "C" {
 #endif /* __cplusplus */
 
 #endif /* INCLUDE_RT_MPI_RK_DEFINES_H_ */
+

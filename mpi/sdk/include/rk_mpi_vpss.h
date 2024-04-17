@@ -5,9 +5,9 @@
 #define INCLUDE_RT_MPI_RK_MPI_VPSS_H_
 
 #include "rk_common.h"
-#include "rk_comm_video.h"
 #include "rk_comm_mb.h"
 #include "rk_comm_vpss.h"
+#include "rk_comm_aiisp.h"
 
 #ifdef __cplusplus
 #if __cplusplus

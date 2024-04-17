@@ -189,8 +189,10 @@ typedef enum rkPIXEL_FORMAT_E {
     RK_FMT_RGB_BAYER_SGBRG_12BPP,                      /* 12-bit raw               */
     RK_FMT_RGB_BAYER_SGRBG_12BPP,                      /* 12-bit raw               */
     RK_FMT_RGB_BAYER_SRGGB_12BPP,                      /* 12-bit raw               */
-    RK_FMT_RGB_BAYER_14BPP,                            /* 14-bit raw               */
     RK_FMT_RGB_BAYER_SBGGR_16BPP,                      /* 16-bit raw               */
+    RK_FMT_RGB_BAYER_SGBRG_16BPP,                      /* 16-bit raw               */
+    RK_FMT_RGB_BAYER_SGRBG_16BPP,                      /* 16-bit raw               */
+    RK_FMT_RGB_BAYER_SRGGB_16BPP,                      /* 16-bit raw               */
     RK_FMT_RGB_BAYER_BUTT,
     RK_FMT_BUTT            = RK_FMT_RGB_BAYER_BUTT,
 } PIXEL_FORMAT_E;

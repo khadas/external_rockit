@@ -9,7 +9,6 @@
 #include "rk_common.h"
 #include "rk_errno.h"
 #include "rk_comm_video.h"
-#include "rk_comm_aiisp.h"
 
 #ifdef __cplusplus
 #if __cplusplus

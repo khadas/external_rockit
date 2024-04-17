@@ -108,12 +108,13 @@ typedef enum rkMOD_ID_E {
     RK_ID_WBC     = 16,
     RK_ID_AVS     = 17,
     RK_ID_GDC     = 18,
-	RK_ID_RGA     = 19,
+    RK_ID_RGA     = 19,
     RK_ID_AF      = 20,
     RK_ID_IVS     = 21,
-	RK_ID_PVS     = 22,
+    RK_ID_PVS     = 22,
     RK_ID_DIS     = 23,
     RK_ID_SWCAC   = 24,
+    RK_ID_AIISP   = 25,
 
     RK_ID_BUTT,
 } MOD_ID_E;
@@ -150,6 +151,7 @@ typedef struct rkMPP_CHN_S {
 #define RK_MOD_PVS       "pvs"
 #define RK_MOD_DIS       "dis"
 #define RK_MOD_SWCAC     "cac"
+#define RK_MOD_AIISP     "aiisp"
 
 typedef enum rkCODEC_ID_E {
      RK_VIDEO_ID_Unused,             /**< Value when coding is N/A */
