@@ -25,6 +25,8 @@ typedef struct rkAIISP_ATTR_S {
     AIISP_CALLBACK_FUNC_S stAiIspCallback;      /* AIISP callback function */
     const RK_CHAR        *pModelFilePath;       /* AIISP model file path   */
     RK_U32                u32FrameBufCnt;       /* RW; frame buffer cnt    */
+    RK_U32                u32Width;
+    RK_U32                u32Height;
 } AIISP_ATTR_S;
 
 #ifdef __cplusplus

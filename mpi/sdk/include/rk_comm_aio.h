@@ -302,6 +302,7 @@ typedef struct rkAI_VQE_MOD_ENABLE_S {
     RK_BOOL bEq;
     RK_BOOL bHowling;
     RK_BOOL bDoa;
+    RK_BOOL bAinr;
 } AI_VQE_MOD_ENABLE_S;
 
 /**Defines the configure parameters of ANR.*/
@@ -438,6 +439,10 @@ typedef struct _AUDIO_WKP_CONFIG_S {
     char  modelWord2[128];    // command word
 } AUDIO_WKP_CONFIG_S;
 
+typedef struct _AUDIO_AINR_CONFIG_S {
+    char modelPath[MAX_AUDIO_FILE_PATH_LEN];
+} AUDIO_AINR_CONFIG_S;
+
 typedef struct rkAUDIO_BEAM_FORM_CONFIG_S {
     RK_S32      s32ModelEn;
     RK_S32      s32RefPos;
@@ -455,6 +460,7 @@ typedef struct rkAUDIO_BEAM_FORM_CONFIG_S {
     AUDIO_HOWL_CONFIG_S howl;
     AUDIO_DOA_CONFIG_S  doa;
     AUDIO_WKP_CONFIG_S  wkp;
+    AUDIO_AINR_CONFIG_S ainr;
 } AUDIO_BEAM_FORM_CONFIG_S;
 
 typedef struct rkAI_VQE_USER_CONFIG_S {

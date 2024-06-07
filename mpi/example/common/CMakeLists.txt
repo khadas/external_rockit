@@ -6,19 +6,21 @@ set(RK_TEST_MOD_SRC
 
 set(RK_TEST_COMMON_SRC
     test_comm_argparse.cpp
-    # test_comm_avs.cpp
+    test_comm_avs.cpp
     test_comm_utils.cpp
     test_comm_bmp.cpp
     test_comm_imgproc.cpp
     test_comm_sys.cpp
-    # test_comm_rgn.cpp
-    # test_comm_venc.cpp
-    # test_comm_vpss.cpp
+    test_comm_rgn.cpp
+    test_comm_venc.cpp
+    test_comm_vpss.cpp
     test_comm_vdec.cpp
     test_comm_vo.cpp
     test_comm_ao.cpp
-    # test_comm_tde.cpp
-    # test_comm_vgs.cpp
+    test_comm_tde.cpp
+    test_comm_vgs.cpp
+    test_comm_app_vdec.cpp
+    test_comm_app_vo.cpp
     tmedia/test_comm_tmd.cpp
 )
 

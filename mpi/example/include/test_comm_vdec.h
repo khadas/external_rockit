@@ -18,7 +18,7 @@
 #define SRC_TESTS_RT_MPI_COMMON_TEST_COMM_VDEC_H_
 
 #include "rk_common.h"
-#include "test_comm_ffm.h"
+#include "test_comm_tmd.h"
 #include "rk_comm_vdec.h"
 #include "rk_mpi_vdec.h"
 

@@ -104,7 +104,7 @@ static RK_S32 TEST_COMM_APP_VDEC_StartBySend(TEST_VDEC_CFG_S *pstCfg) {
 
     pstCfg->stStream.pstStreamInfo = pstStreamInfo;
     pstStreamInfo->VdecChn = pstCfg->s32VdecChn;
-    s32Ret = TEST_COMM_FFmParserOpen(pstCfg->stStream.pSrcFilePath, pstStreamInfo);
+    s32Ret = TEST_COMM_TmdParserOpen(pstCfg->stStream.pSrcFilePath, pstStreamInfo);
     if (s32Ret != RK_SUCCESS) {
         RK_LOGE("failed to open uri %s", pstCfg->stStream.pSrcFilePath);
         return s32Ret;
@@ -201,7 +201,7 @@ static RK_S32 TEST_COMM_APP_VDEC_StopBySend(TEST_VDEC_CFG_S *pstCfg) {
     if (s32Ret != RK_SUCCESS) {
         RK_LOGE("failed to stop %d vdec channel", pstCfg->s32VdecChn);
     }
-    s32Ret = TEST_COMM_FFmParserClose(pstStreamInfo);
+    s32Ret = TEST_COMM_TmdParserClose(pstStreamInfo);
     if (s32Ret != RK_SUCCESS) {
         RK_LOGE("failed to close stream");
     }
