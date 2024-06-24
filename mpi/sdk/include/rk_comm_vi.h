@@ -361,18 +361,33 @@ typedef struct rkVI_EVENT_CALL_BACK_S {
     RK_VOID            *pPrivateData;
 } VI_EVENT_CALL_BACK_S;
 
-typedef enum _rkVILightType{
+typedef enum _rkVI_LIGHT_TYPE{
     LIGHT_TYPE_PWM,
     LIGHT_TYPE_GPIO,
 } VI_LIGHT_TYPE_E;
 
-typedef struct rkVILightParam{
-    RK_U8  light_type;
-    RK_U8  light_enable;
-    RK_U64 duty_cycle;
-    RK_U64 period;
-    RK_U32 polarity;
+typedef struct rkVI_LIGHT_PARAM{
+    RK_U8  u8lLightType;
+    RK_U8  u8LightEnable;
+    RK_U64 u64DutyCycle;
+    RK_U64 u64Period;
+    RK_U32 u32Polarity;
 } VI_LIGHT_CTL_PARAM_S;
+
+typedef enum rkVI_SENSOR_MODE {
+    SENSOR_NO_HDR = 0,
+    SENSOR_HDR_X2 = 5,
+    SENSOR_HDR_X3 = 6,
+    SENSOR_HDR_COMPR,
+} VI_SENSOR_MODE_E;
+
+typedef struct rkVI_SENSOR_SETTING {
+    RK_U32 u32SensorWidth;                // width of resolution
+    RK_U32 u32SensorHeight;               // height of resolution
+    RK_U32 u32SensorFps;                  // 120 / 60 / 30
+    PIXEL_FORMAT_E enSensorFmt;           // RK_FMT_*
+    VI_SENSOR_MODE_E enSensorMode;        // linear / hdr2x / hdr3x
+} VI_SENSOR_SETTING_S;
 
 #define RK_ERR_VI_INVALID_PARA        RK_DEF_ERR(RK_ID_VI, RK_ERR_LEVEL_ERROR, RK_ERR_ILLEGAL_PARAM)
 #define RK_ERR_VI_INVALID_DEVID       RK_DEF_ERR(RK_ID_VI, RK_ERR_LEVEL_ERROR, RK_ERR_INVALID_DEVID)

@@ -420,6 +420,8 @@ typedef enum rkFRAME_FLAG_E {
     FRAME_FLAG_SNAP_CUR    = 0x1 << 1,
     FRAME_FLAG_SNAP_REF    = 0x1 << 2,
     FRAME_FLAG_SNAP_END    = 0x1 << 31,
+    FRAME_FLAG_EOS         = 0x1 << 3,
+    FRAME_FLAG_ERROR       = 0x1 << 4,
     FRAME_FLAG_BUTT
 } FRAME_FLAG_E;
 

@@ -89,6 +89,9 @@ RK_S32 RK_MPI_VI_GetChnDISAttr(VI_PIPE ViPipe, VI_CHN ViChn, DIS_ATTR_S *pstDISA
 RK_S32 RK_MPI_VI_GetSwcacConfig(VI_PIPE ViPipe, VI_CHN ViChn, SWCAC_CONFIG_S *pstSwcacCfg);
 RK_S32 RK_MPI_VI_SetSwcacConfig(VI_PIPE ViPipe, VI_CHN ViChn, const SWCAC_CONFIG_S *pstSwcacCfg);
 
+RK_S32 RK_MPI_VI_DevEnableLight (VI_DEV ViDev, int lightId, VI_LIGHT_CTL_PARAM_S *light_param);
+RK_S32 RK_MPI_VI_DevEnableSinglelFrame(VI_DEV Videv, int frmNum);
+
 #ifdef __cplusplus
 #if __cplusplus
 }

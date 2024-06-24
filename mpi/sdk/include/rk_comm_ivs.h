@@ -92,6 +92,9 @@ typedef struct rkIVS_OD_INFO_S {
     RK_U32 frameId;          /* 所在帧序号 */
     RK_U32 u32Flag;
     RK_U32 u32PixSum;
+    RK_CHAR *pData;
+    RK_U32 u32Size;
+    RK_S32 s32Fd;
 } IVS_OD_INFO_S;
 
 typedef struct rkIVS_OD_ATTR_S {
