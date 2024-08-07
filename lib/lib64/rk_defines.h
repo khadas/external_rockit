@@ -50,6 +50,7 @@ extern "C" {
 #define VI_MAX_PHY_CHN_NUM             4
 #define VI_MAX_EXT_CHN_NUM             0
 #define VI_MAX_CHN_NUM                 (VI_MAX_PHY_CHN_NUM + VI_MAX_EXT_CHN_NUM)
+#define VI_PIPE_SUB_STREAM_MAX         (3)  /* pipe max raw'data stream num */
 
 /* For VO */
 #define VO_SPLICE_DEVICE_TYPE          0

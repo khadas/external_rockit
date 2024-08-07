@@ -176,6 +176,7 @@ typedef enum rkPIXEL_FORMAT_E {
 
     RK_FMT_2BPP            = RK_VIDEO_FMT_BPP,
     RK_FMT_8BPP,
+    RK_FMT_1BPP,
 
     RK_FMT_RGB_BAYER_SBGGR_8BPP = RK_VIDEO_FMT_BAYER,  /* 8-bit raw                */
     RK_FMT_RGB_BAYER_SGBRG_8BPP,                       /* 8-bit raw                */

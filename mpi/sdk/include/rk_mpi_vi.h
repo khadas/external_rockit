@@ -15,6 +15,8 @@ extern "C" {
 #endif /* __cplusplus */
 
 /* 1 for vi device */
+RK_S32 RK_MPI_VI_SetModParam(const VI_PARAM_MOD_S *pstModParam);
+RK_S32 RK_MPI_VI_GetModParam(VI_PARAM_MOD_S *pstModParam);
 RK_S32 RK_MPI_VI_SetDevAttr(VI_DEV ViDev, const VI_DEV_ATTR_S *pstDevAttr);
 RK_S32 RK_MPI_VI_GetDevAttr(VI_DEV ViDev, VI_DEV_ATTR_S *pstDevAttr);
 RK_S32 RK_MPI_VI_EnableDev(VI_DEV ViDev);
@@ -92,6 +94,7 @@ RK_S32 RK_MPI_VI_SetSwcacConfig(VI_PIPE ViPipe, VI_CHN ViChn, const SWCAC_CONFIG
 RK_S32 RK_MPI_VI_DevEnableLight (VI_DEV ViDev, int lightId, VI_LIGHT_CTL_PARAM_S *light_param);
 RK_S32 RK_MPI_VI_DevEnableSinglelFrame(VI_DEV Videv, int frmNum);
 
+RK_S32 RK_MPI_VI_DevSelectSetting(VI_DEV ViDev, VI_SENSOR_SETTING_S *sensorSetting);
 #ifdef __cplusplus
 #if __cplusplus
 }

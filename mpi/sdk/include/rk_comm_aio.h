@@ -169,7 +169,7 @@ typedef struct rkAIO_ATTR_S {
     RK_U8               u8CardName[64];
     RK_U8               u8MapOutChns[AI_MAX_CHN_NUM];
     RK_U8               u8MapChns[AI_MAX_CHN_NUM][MAX_SOUND_CARD_CHANNEL];
-    RK_BOOL             bBypassFlag;
+    RK_BOOL             bMultichnFlag;
     RK_S32              s32DevQueLen;
 } AIO_ATTR_S;
 
