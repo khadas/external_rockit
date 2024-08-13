@@ -72,6 +72,10 @@ set(RK_MPI_TEST_VI_SRC
     test_mpi_vi.cpp
 )
 
+set(CAMERA_PIPELINE_SRC
+    camera_pipeline.cpp
+)
+
 set(RK_MPI_TEST_MMZ_SRC
     test_mpi_mmz.cpp
 )
@@ -189,6 +193,13 @@ install(TARGETS rk_mpi_aenc_test RUNTIME DESTINATION "bin")
 add_executable(rk_mpi_vi_test ${RK_MPI_TEST_VI_SRC} ${RK_MPI_TEST_COMMON_SRC})
 target_link_libraries(rk_mpi_vi_test ${ROCKIT_DEP_COMMON_LIBS})
 install(TARGETS rk_mpi_vi_test RUNTIME DESTINATION "bin")
+
+#--------------------------
+# camera_pipeline
+#--------------------------
+add_executable(camera_pipeline ${CAMERA_PIPELINE_SRC} ${RK_MPI_TEST_COMMON_SRC})
+target_link_libraries(camera_pipeline ${ROCKIT_DEP_COMMON_LIBS})
+install(TARGETS camera_pipeline RUNTIME DESTINATION "bin")
 
 #--------------------------
 # rk_mpi_mmz_test
