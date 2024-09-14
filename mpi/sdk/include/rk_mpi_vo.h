@@ -76,6 +76,8 @@ RK_S32 RK_MPI_VO_GetLayerCSC(VO_LAYER VoLayer, VO_CSC_S *pstVideoCSC);
 RK_S32 RK_MPI_VO_SetLayerDispBufLen(VO_LAYER VoLayer, RK_U32 u32BufLen);
 RK_S32 RK_MPI_VO_GetLayerDispBufLen(VO_LAYER VoLayer, RK_U32 *pu32BufLen);
 
+RK_S32 RK_MPI_VO_SetLayerFlush(VO_LAYER VoLayer);
+
 RK_S32 RK_MPI_VO_GetLayerFrame(VO_LAYER VoLayer, VIDEO_FRAME_INFO_S *pstVFrame, RK_S32 s32MilliSec);
 RK_S32 RK_MPI_VO_ReleaseLayerFrame(VO_LAYER VoLayer, VIDEO_FRAME_INFO_S *pstVFrame);
 

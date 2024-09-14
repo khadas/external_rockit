@@ -35,6 +35,8 @@ typedef enum rkVIDEO_OUTPUT_ORDER_E {
 typedef enum rkVIDEO_MODE_E {
     VIDEO_MODE_STREAM = 0, /* send by stream */
     VIDEO_MODE_FRAME, /* send by frame  */
+    VIDEO_MODE_FRAME_SLICE, /* send by frame with slice decode */
+    VIDEO_MODE_SLICE, /* send by slice with slice decode */
     VIDEO_MODE_COMPAT, /* One frame supports multiple packets sending. */
     /* The current frame is considered to end when bEndOfFrame is equal to RK_TRUE */
     VIDEO_MODE_BUTT
